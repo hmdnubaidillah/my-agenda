@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row-center">
+    <div class="col my-5">
+      <% if (todo.length === 0) { %>
+        <div class="alert alert-info" role="alert">
+       kamu tidak punya agenda apapun sekarang :D
+        </div>
+      <% } else { %>
+      <% todo.forEach(todo => { %>
+        <div class="field border kegiatan">
+          <div class="todo">
+            <div class="align-middle"><%= todo.kegiatan %> </div>
+          </div>
+          <div class="button">
+            <a href="/edit/<%= todo.kegiatan %>" class="btn btn-success badge">
+             edit
+            </a>
+            <form action="/todo?_method=DELETE" method="POST" class="d-inline">
+            <input type="hidden" name="kegiatan" value="<%= todo.kegiatan %>">
+            <button type="submit" class="btn btn-danger badge">hapus</button>
+            </form>
+          </div>
+        </div> 
+      <% }) %>
+      <% } %> 
+   <!-- add modal -->
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">Tambah Agenda</button>
+      <!-- Modal -->
+        <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tambah Agenda</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form method="post" action="/todo">
+                <div class="mb-3">
+                  <label for="kegiatan" class="form-label">Agenda</label>
+                  <input type="text" class="form-control" id="kegiatan" name="kegiatan" required />
+                </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+              <button type="submit" class="btn btn-success">Tambah Agenda</button>
+            </div>
+          </form>
+        </div>
+          </div>
+        </div>
+        </div>
+      <!-- end add modal -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

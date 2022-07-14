@@ -1,0 +1,24 @@
+{
+  "name": "todov3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-layout": "^0.1.0",
+    "method": "^2.0.0",
+    "method-override": "^3.0.0",
+    "mongoose": "^6.4.4",
+    "nodemon": "^2.0.19",
+    "override": "^0.0.1"
+  }
+}

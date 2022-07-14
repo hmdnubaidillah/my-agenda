@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <form method="post" action="/?_method=PUT" class="my-3">
+        <input type="hidden" name="_id" value="<%= todo._id %>" />
+        <input type="hidden" name="oldNama" value="<%= todo.oldKegiatan || todo.kegiatan %>" />
+        <div class="mb-3">
+          <label for="kegiatan" class="form-label fw-bold">Agenda</label>
+          <input type="text" class="form-control" id="kegiatan" name="kegiatan" required value="<%= todo.kegiatan %>" />
+        </div>
+        <button type="submit" class="btn btn-primary">Edit Agenda</button>
+      </form>
+    </div>
+  </div>
+</div>
